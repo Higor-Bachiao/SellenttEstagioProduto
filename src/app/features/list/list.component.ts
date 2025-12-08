@@ -6,7 +6,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './components/card/card.component';
-import { RouterLink } from '@angular/router';
+import { Router,RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-list',
@@ -19,12 +20,16 @@ export class ListComponent {
   products : Product[] = [];
 
   ProductService = inject(ProductsService);
-
+  router = inject(Router);
 
   ngOnInit(){
     this.ProductService.getAll().subscribe((products) => {
       this.products = products;
     });
+  }
+
+  onEdit(product: Product) {
+    this.router.navigate(['/edit-product', product.id]);
   }
 
 }
