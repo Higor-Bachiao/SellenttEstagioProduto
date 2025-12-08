@@ -1,0 +1,8 @@
+<a mat-button [routerLink]="['/create-product']">Novo Produto</a>
+
+@for (product of products; track product.id) {
+    <app-card [product]="product"></app-card>
+}
+
+
+
