@@ -1,5 +1,24 @@
-.action-container{
-    display: flex;
-    justify-content: flex-end;
-    padding:16px;
+.list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.action-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 32px;
+}
+
+.products-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
 }

@@ -5,6 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -16,6 +18,8 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatCardModule,
+    MatIconModule,
   ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss',
@@ -25,7 +29,7 @@ export class FormComponent {
 
   form!: FormGroup;
 
-  @Output() submit = new EventEmitter<Product>();
+  @Output() done = new EventEmitter<Product>();
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -38,7 +42,7 @@ export class FormComponent {
 
   onSubmit() {
     const product = this.form.value as Product;
-    this.submit.emit(product);
+    this.done.emit(product);
   }
 
 }

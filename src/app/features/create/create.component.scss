@@ -1,19 +1,7 @@
-.form-container {
-  display: flex;
-  justify-content: center;
+.back-button-container {
   padding: 20px;
 }
 
-.form-content-container {
-  width: 100%;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.yellow-button {
-  background-color: #ffd700 !important;
-  color: #000 !important;
-  margin-top: 8px;
+.link-container{
+  margin: 8px 0;
 }

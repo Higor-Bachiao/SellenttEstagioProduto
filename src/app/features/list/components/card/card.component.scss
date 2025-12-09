@@ -1,0 +1,27 @@
+.product-card {
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+mat-card-header {
+  padding: 16px;
+}
+
+mat-card-actions {
+  padding: 8px 16px;
+  
+  button {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    
+    mat-icon {
+      font-size: 18px;
+      height: 18px;
+      width: 18px;
+    }
+  }
+}

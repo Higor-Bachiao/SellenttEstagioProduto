@@ -8,18 +8,15 @@ import { ProductsService } from '../../shared/services/products.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Product } from '../../shared/interfaces/product.interface';
+import { FormComponent } from '../../shared/components/form/form.component';
+import { BackToListComponent } from '../../shared/components/back-to-list/back-to-list.component';
 
 @Component({
   selector: 'app-edit',
   standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-  ],
+  imports: [FormComponent, BackToListComponent, MatButtonModule],
   templateUrl: './edit.component.html',
-  styleUrl: './edit.component.scss',
+  styleUrls: ['./edit.component.scss'],
 })
 export class EditComponent {
   productsService = inject(ProductsService);
@@ -28,17 +25,11 @@ export class EditComponent {
   activatedRoute = inject(ActivatedRoute);
   product = inject(ActivatedRoute).snapshot.data['product'];
 
-  form = new FormGroup({
-    title: new FormControl<string>(this.product.title, {
-      nonNullable: true,
-      validators: Validators.required,
-    }),
-  });
 
-  onSubmit() {
+  onSubmit(product: Product) {
     this.productsService
       .put(this.product.id, {
-        title: this.form.controls.title.value,
+        title: product.title,
       })
       .subscribe(() => {
         this.matSnackBar.open('Produto atualizado com sucesso!', 'Fechar');

@@ -1,34 +1,12 @@
 {
   "products": [
     {
-      "id": 1,
-      "title": "Produto de Teste",
-      "price": 99.9
+      "id": "12af",
+      "title": "mochila"
     },
     {
-      "title": "Salvação",
-      "id": "2342"
-    },
-    {
-      "id": "2b32",
-      "title": "teste"
-    },
-    {
-      "id": "e735",
-      "title": "camiseta",
-      "price": 0
-    },
-    {
-      "title": "liqui",
-      "id": "8288"
-    },
-    {
-      "title": "Nome",
-      "id": "6157"
-    },
-    {
-      "title": "Nome",
-      "id": "f93c"
+      "title": "Bmw",
+      "id": "af6e"
     }
   ]
 }
